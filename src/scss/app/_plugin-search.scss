@@ -189,6 +189,7 @@ body {
                 background-image: var(--search-input-background-image--focus, var(--search-input-background-image));
                 background-position: var(--search-input-background-position--focus, var(--search-input-background-position));
                 background-size: var(--search-input-background-size--focus, var(--search-input-background-size));
+                box-shadow: none;
             }
 
             @supports(width: env(safe-area-inset)) {

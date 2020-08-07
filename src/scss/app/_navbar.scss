@@ -1,6 +1,7 @@
 // Nav bar
 // =============================================================================
 .app-nav {
+    display: block!important;
     position: absolute;
     z-index: map-get($z-index, navbar);
     top: calc(35px - (0.5em * var(--base-line-height)));
@@ -35,7 +36,7 @@
         a {
             display: block;
             line-height: 1;
-            transition: var(--navbar-root-transition);
+            transition: color .5s ease-out;
         }
     }
 
@@ -69,7 +70,7 @@
                     background: var(--navbar-root-background--hover, var(--navbar-root-background));
                     border-style: var(--navbar-root-border-style--hover, var(--navbar-root-border-style));
                     border-color: var(--navbar-root-border-color--hover, var(--navbar-root-border-color));
-                    color: var(--navbar-root-color--hover, var(--navbar-root-color));
+                    color: var(--sidebar-link-active);
                     text-decoration: var(--navbar-root-text-decoration--hover, var(--navbar-root-text-decoration));
                     text-decoration-color: var(--navbar-root-text-decoration-color--hover, var(--navbar-root-text-decoration-color));
                 }

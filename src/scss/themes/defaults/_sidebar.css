@@ -4,7 +4,7 @@
     --sidebar-background                          : var(--base-background-color);
     --sidebar-border-color                        : ;
     --sidebar-border-width                        : 0;
-    --sidebar-padding                             : 0 25px;
+    --sidebar-padding                             : 0 14px;
     --sidebar-transition-duration                 : var(--duration-fast);
     --sidebar-width                               : 17rem;
 
@@ -65,7 +65,7 @@
     --sidebar-nav-link-font-weight--active        : ;
     --sidebar-nav-link-font-weight--hover         : ;
     --sidebar-nav-link-margin                     : ;
-    --sidebar-nav-link-padding                    : 0.25em 0;
+    --sidebar-nav-link-padding                    : ;
     --sidebar-nav-link-text-decoration            : ;
     --sidebar-nav-link-text-decoration--active    : underline;
     --sidebar-nav-link-text-decoration--hover     : underline;

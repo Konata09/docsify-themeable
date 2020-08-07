@@ -131,10 +131,6 @@ body:not([data-platform^="Mac"]) {
     }
 }
 
-::selection {
-    background: var(--selection-color);
-}
-
 // Classes
 // -----------------------------------------------------------------------------
 .emoji {
@@ -150,4 +146,12 @@ body:not([data-platform^="Mac"]) {
         margin-left: 0;
         vertical-align: 0.075em;
     }
+}
+
+.dot {
+    margin: 0 .2rem;
+}
+
+.dot::after {
+    content: '·';
 }

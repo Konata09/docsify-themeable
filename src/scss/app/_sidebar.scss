@@ -66,7 +66,10 @@ main {
         }
 
         .app-name-link {
-            color: var(--sidebar-name-color);
+            display: flex;
+            align-items: center;
+            color: var(--sidebar-app-name);
+            font-weight: 300;
         }
     }
 
@@ -112,8 +115,8 @@ main {
     a {
         display: block;
         overflow: hidden;
-        margin: var(--sidebar-nav-link-margin);
-        padding: var(--sidebar-nav-link-padding);
+        margin: 0 -1rem 0 0;
+        padding: .2rem .3rem;
         border-width: var(--sidebar-nav-link-border-width, 0);
         border-style: var(--sidebar-nav-link-border-style);
         border-color: var(--sidebar-nav-link-border-color);
@@ -124,12 +127,13 @@ main {
         background-repeat: var(--sidebar-nav-link-background-repeat);
         background-size: var(--sidebar-nav-link-background-size);
         color: var(--sidebar-nav-link-color);
-        font-weight: var(--sidebar-nav-link-font-weight);
+        font-weight: 500;
+        font-size: 0.9rem;
         white-space: nowrap;
         text-decoration: var(--sidebar-nav-link-text-decoration);
         text-decoration-color: var(--sidebar-nav-link-text-decoration-color);
         text-overflow: ellipsis;
-        transition: var(--sidebar-nav-link-transition);
+        transition: all .5s ease-out;
 
         img {
             margin-top: -0.25em;
@@ -148,9 +152,9 @@ main {
             background-image: var(--sidebar-nav-link-background-image--hover, var(--sidebar-nav-link-background-image));
             background-position: var(--sidebar-nav-link-background-position--hover, var(--sidebar-nav-link-background-position));
             background-size: var(--sidebar-nav-link-background-size--hover, var(--sidebar-nav-link-background-size));
-            color: var(--sidebar-nav-link-color--hover, var(--sidebar-nav-link-color));
+            color: var(--sidebar-link-active);
             font-weight: var(--sidebar-nav-link-font-weight--hover, var(--sidebar-nav-link-font-weight));
-            text-decoration: var(--sidebar-nav-link-text-decoration--hover, var(--sidebar-nav-link-text-decoration));
+            text-decoration: none;
             text-decoration-color: var(--sidebar-nav-link-text-decoration-color);
         }
     }
@@ -175,6 +179,39 @@ main {
             }
         }
 
+        > p {
+            margin: .5rem 0;
+            background-repeat: var(--sidebar-nav-pagelink-background-repeat);
+            background-size: var(--sidebar-nav-pagelink-background-size);
+            cursor: pointer;
+            transition: color .5s ease-out;
+
+            // Page links
+            padding: 0 1.3rem ;
+
+            // Not loaded (w/o subnav)
+            &:only-child {
+                background-image: var(--sidebar-nav-pagelink-background-image);
+                background-position: var(--sidebar-nav-pagelink-background-position);
+            }
+
+            // Loaded (w/ subnav)
+            &:not(:only-child) {
+                background-image: var(--sidebar-nav-pagelink-background-image);
+                background-position: var(--sidebar-nav-pagelink-background-position--collapse, var(--sidebar-nav-pagelink-background-position--loaded, var(--sidebar-nav-pagelink-background-image)));
+            }
+            &.active {
+                background-image: var(--sidebar-nav-pagelink-background-image--active);
+                background-position: var(--sidebar-nav-pagelink-background-position--active, var(--sidebar-nav-pagelink-background-image));
+
+            }
+
+            &:hover {
+                color: var(--sidebar-link-active);
+            }
+        }
+
+
         &:first-child {
             > span,
             > strong {
@@ -194,6 +231,15 @@ main {
     }
 }
 
+.sidebar-nav > ul > li {
+    border-top: 1px solid #eee;
+    > ul.hide {
+        height: 0;
+        overflow: hidden;
+        transition: all .4s cubic-bezier(.25, .46, .45, .94);
+    }
+}
+
 // 1. Standard sidebar navigation
 .sidebar-nav {
     li {
@@ -208,33 +254,6 @@ main {
             }
         }
 
-        > a {
-            background-repeat: var(--sidebar-nav-pagelink-background-repeat);
-            background-size: var(--sidebar-nav-pagelink-background-size);
-
-            // Page links
-            &[href^="#/"]:not([href*="?id="]) {
-                transition: var(--sidebar-nav-pagelink-transition);
-
-                &,
-                ~ ul a {
-                    padding: var(--sidebar-nav-pagelink-padding, var(--sidebar-nav-link-padding));
-                }
-
-                // Not loaded (w/o subnav)
-                &:only-child {
-                    background-image: var(--sidebar-nav-pagelink-background-image);
-                    background-position: var(--sidebar-nav-pagelink-background-position);
-                }
-
-                // Loaded (w/ subnav)
-                &:not(:only-child) {
-                    background-image: var(--sidebar-nav-pagelink-background-image--loaded, var(--sidebar-nav-pagelink-background-image));
-                    background-position: var(--sidebar-nav-pagelink-background-position--loaded, var(--sidebar-nav-pagelink-background-image));
-                }
-            }
-        }
-
         &.active,
         &.collapse {
             > a {
@@ -245,7 +264,7 @@ main {
                 background-image: var(--sidebar-nav-link-background-image--active, var(--sidebar-nav-link-background-image));
                 background-position: var(--sidebar-nav-link-background-position--active, var(--sidebar-nav-link-background-position));
                 background-size: var(--sidebar-nav-link-background-size--active, var(--sidebar-nav-link-background-size));
-                color: var(--sidebar-nav-link-color--active, var(--sidebar-nav-link-color));
+                color: var(--sidebar-link-active);
                 font-weight: var(--sidebar-nav-link-font-weight--active, var(--sidebar-nav-link-font-weight));
                 text-decoration: var(--sidebar-nav-link-text-decoration--active, var(--sidebar-nav-link-text-decoration));
                 text-decoration-color: var(--sidebar-nav-link-text-decoration-color);
@@ -266,17 +285,6 @@ main {
         }
 
         &.collapse {
-            > a {
-                // Page links
-                &[href^="#/"]:not([href*="?id="]) {
-                    // Loaded (w/ subnav)
-                    &:not(:only-child) {
-                        background-image: var(--sidebar-nav-pagelink-background-image--collapse, var(--sidebar-nav-pagelink-background-image--loaded, var(--sidebar-nav-pagelink-background-image)));
-                        background-position: var(--sidebar-nav-pagelink-background-position--collapse, var(--sidebar-nav-pagelink-background-position--loaded, var(--sidebar-nav-pagelink-background-image)));
-                    }
-                }
-            }
-
             .app-sub-sidebar {
                 display: none;
             }
@@ -335,18 +343,19 @@ main {
     background: transparent;
     appearance: none;
     cursor: pointer;
-
+    box-shadow: 0px 0 6px -4px #3f3f3f;
+    
     .sidebar-toggle-button {
         position: absolute;
         top: var(--sidebar-toggle-offset-top);
         left: var(--sidebar-toggle-offset-left);
         height: var(--sidebar-toggle-height);
         border-radius: var(--sidebar-toggle-border-radius);
-        border-width: var(--sidebar-toggle-border-width);
-        border-style: var(--sidebar-toggle-border-style);
-        border-color: var(--sidebar-toggle-border-color);
-        background: var(--sidebar-toggle-background, transparent);
-        color: var(--sidebar-toggle-icon-color);
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--sidebar-toggle-border);
+        background: var(--sidebar-toggle-bk);
+        color: var(--sidebar-link-active);
     }
 
     span {

@@ -50,20 +50,6 @@ pre[data-lang] {
     color: var(--code-theme-text);
 }
 
-pre[data-lang]::-moz-selection,
-pre[data-lang] ::-moz-selection,
-code[class*="lang-"]::-moz-selection,
-code[class*="lang-"] ::-moz-selection {
-    background: var(--code-theme-selection, var(--selection-color));
-}
-
-pre[data-lang]::selection,
-pre[data-lang] ::selection,
-code[class*="lang-"]::selection,
-code[class*="lang-"] ::selection {
-    background: var(--code-theme-selection, var(--selection-color));
-}
-
 :not(pre) > code[class*="lang-"],
 pre[data-lang] {
     background: var(--code-theme-background);

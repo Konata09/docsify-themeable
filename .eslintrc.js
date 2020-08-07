@@ -22,7 +22,7 @@ module.exports = {
         "dot-notation"               : ["error"],
         "eqeqeq"                     : ["error"],
         "indent"                     : ["error", 4],
-        "linebreak-style"            : ["error", "unix"],
+        "linebreak-style"            : ["error", "windows"],
         "no-console"                 : ["warn"],
         "no-floating-decimal"        : ["error"],
         "no-implicit-coercion"       : ["error"],

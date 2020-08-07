@@ -231,6 +231,7 @@
 
     img {
         max-width: 100%;
+        color: var(--content-info);
     }
 
     kbd {
@@ -270,14 +271,11 @@
         text-align: left;
     }
 
-    thead {
+    th {
         border-color: var(--table-head-border-color);
         border-style: solid;
         border-width: var(--table-head-border-width, 0);
         background: var(--table-head-background);
-    }
-
-    th {
         font-weight: var(--table-head-font-weight);
         color: var(--strong-color);
     }
@@ -430,4 +428,14 @@
             color: var(--notice-tip-before-color, var(--notice-before-color));
         }
     }
+}
+
+.metainfo {
+    color: var(--content-info);
+    margin-top: 1rem;
+}
+
+footer {
+    text-align: center;
+    color: var(--content-info);
 }
