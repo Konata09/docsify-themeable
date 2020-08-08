@@ -231,7 +231,7 @@
 
     img {
         max-width: 100%;
-        color: var(--content-info);
+        
     }
 
     kbd {
@@ -437,5 +437,19 @@
 
 footer {
     text-align: center;
+    color: var(--content-info);
+
+    .license-statement>a{
+        text-decoration: none;
+        &:hover{
+            color: var(--sidebar-link-active);
+            text-decoration: none;
+        }
+    }
+}
+
+.img-desc{
+    text-align: center;
+    display: block;
     color: var(--content-info);
 }
