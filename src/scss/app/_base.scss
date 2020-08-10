@@ -156,3 +156,60 @@ body:not([data-platform^="Mac"]) {
 .dot::after {
     content: '·';
 }
+
+@keyframes swing{
+    from{
+      transform: rotate(-3deg);
+    }
+    to{
+       transform: rotate(3deg);
+    }
+}
+
+#pull-switch {
+    position: absolute;
+    top: 0;
+    right: 70px;
+    z-index: 50;
+    display: block;
+    content: '';
+    animation: swing 4000ms infinite alternate ease-in-out;
+    
+    #pull-string {
+        position: absolute;
+        width: 2px;
+        height: 115px;
+        background-repeat: no-repeat;
+        background-image:   linear-gradient(to bottom, var(--theme-color), var(--switch-inner));
+        background-size: 2px 119px;
+        background-position: center top;
+        transition: all .5s ease;
+        &.pulling{
+            transform: scaleY(1.4);
+        }
+    }
+
+    #pull-toggler {
+        cursor: pointer;
+        display: block;
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 110px;
+        left: -14px;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(circle at 50% 50%, transparent 15%,
+                                            var(--switch-inner) 15.5%,
+                                            var(--switch-inner) 20%,
+                                            var(--switch-outter) 20.5%,
+                                            var(--switch-outter) 25%,
+                                            transparent 25.5%);
+        background-size: 80px 80px;
+        background-position: center center;
+        transition: all .5s ease;
+        &.pulling{
+            transform: translateY(23px);
+        }
+    }
+}

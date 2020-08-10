@@ -454,6 +454,12 @@ footer {
     color: var(--content-info);
 }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-	background: var(--pre-code-bk) !important;
+pre[data-lang] {
+    background: var(--pre-code-bk) !important;
+    color: #ccc;
+}
+
+code[class*="lang-"], pre[class*="lang-"] {
+	color: #ccc;
+	background: 0 0;
 }
