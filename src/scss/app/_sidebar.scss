@@ -37,7 +37,7 @@ main {
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: map-get($z-index, sidebar);
+    z-index: 58;
     top: 0;
     right: 100%;
     overflow-x: hidden;
@@ -335,7 +335,7 @@ main {
 
 .sidebar-toggle {
     position: fixed;
-    z-index: (map-get($z-index, sidebar) + 1);
+    z-index: 60;
     top: 0;
     bottom: 0;
     left: 0;
@@ -421,7 +421,7 @@ body.close {
     nav.app-nav,
     .github-corner {
         @include media("<medium") {
-            display: none;
+            translate: 17rem 0;
         }
     }
 
@@ -462,6 +462,11 @@ body.close {
     main > .content {
         @include media(">=medium") {
             margin-left: 0;
+        }
+    }
+    #pull-switch {
+        @include media("<medium") {
+        translate: 17rem 0;
         }
     }
 }
