@@ -241,9 +241,42 @@
 
     // Dark Mode
     :root:not([data-user-color-scheme]) {
-       --text                                           : #eff;
-       --theme-color                                    : #000;
-    }
+        --bg-color-1                                        : #252d38;
+        --bg-color-2                                        : #181C27;
+        --border-color-1                                    : #435266;
+        --border-color-2                                    : #252e3c;
+    
+        --text                                              : #eff;
+        --theme-color                                       : #3298dcbb;
+        --base-color                                        : rgb(255,255,255,.9);
+        --base-background-color                             : var(--bg-color-1);
+        --content-info                                      : rgb(255,255,255,.66);
+        --heading-color                                     : rgb(255,255,255,.92);
+        --hr-border-color                                   : var(--border-color-1);
+        --code-inline-background                            : #3e4b5e;
+        --code-inline-color                                 : #c3c7cb;
+        --pre-code-bk                                       : #131824;
+    
+        --sidebar-app-name                                  : rgb(255,255,255,.92);
+        --sidebar-icon-color                                : rgb(255,255,255);
+        --sidebar-border-color                              : #3a404a;
+        --sidebar-background                                : var(--bg-color-2);
+        --sidebar-li-border-color                           : var(--border-color-2);
+        --sidebar-link-active                               : #3298dc;
+        --sidebar-toggle-bk                                 : var(--bg-color-2);
+        --sidebar-toggle-border                             : var(--sidebar-border-color);
+        --sidebar-toggle-color                              : #526380;
+        --search-input-background-color                     : var(--bg-color-1);
+        --search-input-placeholder-color                    : rgba(255,255,255,.86);
+        --search-input-background-image                     : #{svg-data-uri('<svg height="20px" width="20px" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.46)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="7.5" vector-effect="non-scaling-stroke"></circle><line x1="21" y1="21" x2="15.8" y2="15.8" vector-effect="non-scaling-stroke"></line></svg>')};
+        --search-result-keyword-background                  : var(--border-color-1);
+        --sidebar-nav-pagelink-background-image--active     : #{chevron-data-uri(down, null, 7px, 1.5, #3298dc)};
+        --blockquote-background                             : var(--bg-color-2);
+        --heading-h2-border-color                           : var(--border-color-1);
+        --table-cell-border-color                           : #484f5c;
+        --table-head-border-color                           : #484f5c;
+        --table-row-odd-background                          : var(--bg-color-2);
+        }
 }
 
 // Dark Mode
