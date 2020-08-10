@@ -57,6 +57,7 @@ hr {
     margin: 2em 0;
     border: none;
     border-bottom: var(--hr-border, 0);
+    border-color: var(--hr-border-color);
 }
 
 img {

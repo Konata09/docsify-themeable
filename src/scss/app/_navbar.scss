@@ -1,7 +1,7 @@
 // Nav bar
 // =============================================================================
 .app-nav {
-    display: block!important;
+    display: block;
     position: absolute;
     z-index: map-get($z-index, navbar);
     top: calc(35px - (0.5em * var(--base-line-height)));

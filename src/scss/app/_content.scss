@@ -453,3 +453,7 @@ footer {
     display: block;
     color: var(--content-info);
 }
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+	background: var(--pre-code-bk) !important;
+}

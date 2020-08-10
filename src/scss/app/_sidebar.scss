@@ -3,7 +3,7 @@
 .sidebar,
 .sidebar-toggle,
 main > .content {
-    transition: all var(--sidebar-transition-duration) ease-out;
+    transition: transform var(--sidebar-transition-duration) ease-out, margin-left var(--sidebar-transition-duration) ease-out;
 }
 
 nav.app-nav {
@@ -70,6 +70,9 @@ main {
             align-items: center;
             color: var(--sidebar-app-name);
             font-weight: 300;
+            svg {
+                stroke: var(--sidebar-icon-color)
+            }
         }
     }
 
@@ -232,7 +235,7 @@ main {
 }
 
 .sidebar-nav > ul > li {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--sidebar-li-border-color);
     > ul.hide {
         height: 0;
         overflow: hidden;
@@ -343,7 +346,7 @@ main {
     background: transparent;
     appearance: none;
     cursor: pointer;
-    box-shadow: 0px 0 6px -4px #3f3f3f;
+    // box-shadow: 0px 0 6px -4px #3f3f3f;
     
     .sidebar-toggle-button {
         position: absolute;
@@ -355,7 +358,7 @@ main {
         border-style: solid;
         border-color: var(--sidebar-toggle-border);
         background: var(--sidebar-toggle-bk);
-        color: var(--sidebar-link-active);
+        color: var(--sidebar-toggle-color);
     }
 
     span {
@@ -381,7 +384,7 @@ main {
         bottom: auto;
         left: 0;
         height: var(--sidebar-toggle-height);
-        transform: translateX(var(--sidebar-width));
+        transform: translateX(var(--sidebar-width)) translateX(-1px);
 
         .sidebar-toggle-button {
             top: 0;
@@ -405,7 +408,7 @@ body.close {
     .sidebar-toggle,
     main > .content {
         @include media("<medium") {
-            transform: translateX(var(--sidebar-width));
+            transform: translateX(var(--sidebar-width)) translateX(-1px);
         }
     }
 
