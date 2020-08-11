@@ -231,7 +231,7 @@
 
     img {
         max-width: 100%;
-        
+        filter: var(--img-filter);
     }
 
     kbd {

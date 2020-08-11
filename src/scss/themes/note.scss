@@ -189,8 +189,6 @@
     // Toggle
     --sidebar-toggle-border-radius                      : 0 var(--border-radius-s) var(--border-radius-s) 0;
     --sidebar-toggle-width                              : 32px;
-
-    // New
 }
 
 // Light Mode
@@ -231,7 +229,7 @@
     --table-row-odd-background                          : var(--bg-color-2);
     --switch-outter                                     : #0396ffbd;
     --switch-inner                                      : #005fa3;
-
+    --img-filter                                        : none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -276,6 +274,7 @@
         --table-cell-border-color                           : #484f5c;
         --table-head-border-color                           : #484f5c;
         --table-row-odd-background                          : var(--bg-color-2);
+        --img-filter                                        : brightness(.85) contrast(1.2);
         }
 }
 
@@ -316,5 +315,5 @@
     --table-cell-border-color                           : #484f5c;
     --table-head-border-color                           : #484f5c;
     --table-row-odd-background                          : var(--bg-color-2);
-
+    --img-filter                                        : brightness(.85) contrast(1.2);
 }

@@ -171,7 +171,7 @@ body:not([data-platform^="Mac"]) {
     top: 0;
     right: 70px;
     z-index: 50;
-    display: block;
+    display: blockv;
     content: '';
     animation: swing 4000ms infinite alternate ease-in-out;
     transition: all var(--duration-fast);
@@ -201,10 +201,10 @@ body:not([data-platform^="Mac"]) {
         left: -14px;
         background-repeat: no-repeat;
         background-image: radial-gradient(circle at 50% 50%, transparent 15%,
-                                            var(--switch-inner) 15.5%,
+                                            var(--switch-inner) 17%,
                                             var(--switch-inner) 20%,
                                             var(--switch-outter) 20.5%,
-                                            var(--switch-outter) 25%,
+                                            var(--switch-outter) 20%,
                                             transparent 25.5%);
         background-size: 80px 80px;
         background-position: center center;
