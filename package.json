@@ -35,7 +35,6 @@
   "main": "dist/js/docsify-themeable.js",
   "unpkg": "dist/js/docsify-themeable.min.js",
   "scripts": {
-    "prepare": "run-s clean build",
     "build": "postcss build/css/**/*.css --dir dist/css --use postcss-remove-null postcss-discard-empty postcss-flexbugs-fixes autoprefixer --map",
     "build:pcss": "postcss build/css/**/*.css --dir ../css --use postcss-remove-null postcss-discard-empty postcss-flexbugs-fixes autoprefixer --map",
     "build:scss": "node-sass --output-style compressed src/scss/themes -o build/css --source-map true --source-map-contents true --include-path node_modules",
