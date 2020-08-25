@@ -21,7 +21,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       # Runs a set of commands using the runners shell
       - name: Install dependencies
         run: npm install
@@ -29,12 +31,13 @@ jobs:
         run: |
           npm run build:scss
           npm run build
-      - name: Push to Github
+      - name: Commit files
         run: |
           git config --global user.name "Konata09"
           git config --global user.email "lz9709@gmail.com"
           git add -f dist
           git commit -m "Auto built from ${{ github.sha }}"
-          git push
-    env:
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
