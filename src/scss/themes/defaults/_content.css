@@ -127,12 +127,12 @@
     --kbd-padding                       : 0.65em 0.5em;
 
     /* Links */
-    --link-border-bottom                : ;
-    --link-border-bottom--hover         : ;
-    --link-color                        : ;
-    --link-color--hover                 : ;
-    --link-text-decoration              : underline;
-    --link-text-decoration--hover       : ;
+    --link-border-bottom                : none;
+    --link-border-bottom--hover         : none;
+    --link-color                        : #006dbb;
+    --link-color--hover                 : #0396FF;
+    --link-text-decoration              : none;
+    --link-text-decoration--hover       : none;
     --link-text-decoration-color        : ;
     --link-text-decoration-color--hover : ;
 
